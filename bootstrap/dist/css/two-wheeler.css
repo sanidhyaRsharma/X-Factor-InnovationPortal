@@ -1,0 +1,171 @@
+#wrapper {
+
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+ height: 100%;
+ width: 0;
+ position: fixed;
+ z-index: 1;
+ top: 0;
+ left: 0;
+ background-color: #111;
+ overflow-x: hidden;
+ transition: 0.5s;
+ padding-top: 10px;
+}
+
+
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 300px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -300px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+
+}
+
+.sidebar-nav li a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar-nav li a:hover{
+  color: #f1f1f1;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+
+    font-size: 22px;
+    line-height: 60px;
+    padding-top: 20px;
+
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #333;
+     border-bottom: 1px solid #999;
+
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #999;
+    background: none;
+    box-shadow: none;
+    border-radius: none;
+}
+
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+#nav-sidebar{
+    margin-bottom: 0px;
+    background-color: #111;
+}
+
+.menu-container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #DDD;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.position-button{
+    padding-left: 250px;
+    transition:all 1s
+}
+
+
+#main-row1, #main-row2{
+	transition: all 1s;
+}
+
+.text-center1{
+  text-align: center;
+}
