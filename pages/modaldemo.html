@@ -36,8 +36,12 @@
         <!-- Bootstrap js -->
         <script src="../bootstrap/dist/js/bootstrap.js"></script>
 
-
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <style>
+            .checked {
+                color: orange;
+            }
+            </style>
 </head>
 
 
@@ -50,9 +54,9 @@
             <div class="modal fade" id="mymodal">
                   <div class="modal-dialog">
                         <div class="modal-content">
-                              <div class="modal-header">
+                              <div class="modal-header  jumbotron">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Add Product</h4>
+                                    <h3 class="modal-title ">Edit personnel</h3>
                               </div>
                               
                               <div class="modal-body">
@@ -75,26 +79,38 @@
                               
                               <br><br>
                               
-                              <div class="form-group" style="margin:auto;">
-                                    <label class="radio-inline">
-                                          <input type="radio" name="admin">Admin
-                                    </label>
-                                  
-                                    <label class="radio-inline">
-                                          <input type="radio" name="user">User
-                                    </label>
-                                  
-                                    <label class="radio-inline">
-                                          <input type="radio" name="domain expert">Domain Expert
-                                    </label>
-                                    
-                              </div>
+                              <form class="form-inline">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div class="form-group">
+                                            <input name="group20" type="radio" id="radio120" checked="checked">
+                                            <label for="radio120">Admin</label>
+                                        </div>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div class="form-group">
+                                            <input name="group20" type="radio" id="radio121">
+                                            <label for="radio121">User</label>
+                                        </div>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div class="form-group">
+                                            <input name="group20" type="radio" id="radio122">
+                                            <label for="radio122">Domain Expert</label>
+                                        </div>
+
+                                    </form>
 
 
                 </div>
 
           </div>
           <div class="modal-footer">
+            <div class="label label-success" style="float:left;padding:10px;">
+                                          <span id="1" class="fa fa-star"></span>
+                                          <span id="2" class="fa fa-star"></span>
+                                          <span id="3" class="fa fa-star"></span>
+                                          <span id="4" class="fa fa-star"></span>
+                                          <span id="5" class="fa fa-star"></span>
+                                          <span name="rating" id="ratingValue" type="hidden" value=0></span>
+                                    </div>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="save">Save changes</button>
           </div>
@@ -118,10 +134,27 @@ $(document).ready(function(){
 
 })
 
-
-
 </script>
 
+<script>
+            $(document).ready(function(){
+                  $(".fa-star").mouseenter(function(){
+                        var currRating = $(this).attr('id');
+                        
+                        var i = 1;
+                        while(i <= currRating){
+                              $("#"+i).addClass("checked");
+                              i += 1;
+                        }
+                        
+                        while(i <= 5){
+                              $("#"+i).removeClass("checked");
+                              i += 1;
+                        }
+                        $("#ratingValue").val(currRating);     
+                  });
+            });
+</script>
 
 </body>
 </html>
