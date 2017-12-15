@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home Page</title>
+
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+      <!-- Custom Fonts -->
+      <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+      <!-- jquery -->
+     <script src="../jquery/dist/jquery.js"></script>
+
+
+             <!-- jquery -->
+             <script src="../jquery/dist/jquery.min.js"></script>
+
+
+       <!-- Bootstrap js -->
+        <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Bootstrap js -->
+        <script src="../bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+</head>
+
+
+<body>
+
+
+    <div class="container-fluid">   	
+      <div class="row">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id="showmodal">open modal</button>
+            <div class="modal fade" id="mymodal">
+                  <div class="modal-dialog">
+                        <div class="modal-content">
+                              <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Add Product</h4>
+                              </div>
+                              
+                              <div class="modal-body">
+                                    <div class="row">
+            					<div class="form-group">
+            							      <label class="col-lg-3 control-label">Employee ID</label>
+            							      <div class="col-lg-9">
+            							        <p id="employeeId"> 123123123</p>
+            							      </div>
+            			            </div>
+
+                                <BR><BR>
+
+            					<div class="form-group">
+							      <label class="col-lg-3 control-label">Username</label>
+							      <div class="col-lg-9">
+            						      <p id="userName">John Doe</p>
+            						</div>
+            					</div>
+                              
+                              <br><br>
+                              
+                              <div class="form-group" style="margin:auto;">
+                                    <label class="radio-inline">
+                                          <input type="radio" name="admin">Admin
+                                    </label>
+                                  
+                                    <label class="radio-inline">
+                                          <input type="radio" name="user">User
+                                    </label>
+                                  
+                                    <label class="radio-inline">
+                                          <input type="radio" name="domain expert">Domain Expert
+                                    </label>
+                                    
+                              </div>
+
+
+                </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="save">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    </div>
+    
+    <!--./container-fluid -->
+
+<script>
+
+$(document).ready(function(){
+
+  $("#showmodal").click(function(){
+    $('#mymodal').modal('show');
+  })
+
+})
+
+
+
+</script>
+
+
+</body>
+</html>
