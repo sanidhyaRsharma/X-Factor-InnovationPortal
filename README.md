@@ -3,8 +3,8 @@
 
 - [ ] After login portal
 - [ ] USER INPUT
-	*Text fields answering requisite questions.
-	*Ability to attach detailed documents.
+	* Text fields answering requisite questions.
+	* Ability to attach detailed documents.
 - [ ] FEEDBACK mech ... comments.
 - [ ] Contribution activity monitoring mechanism.2. 2. 2. 
 - [ ] 15 days for open criticism.
