@@ -42,7 +42,9 @@
   padding-left: 30px;
   padding-right: 30px;
 }
-
+.radio-decision{
+  padding-right: 80px;
+}
 </style>
 
 <!-- For stars -->
@@ -101,8 +103,8 @@
     <button type="button" class="btn btn-default" data-dismiss="modal" id="showmodal">open modal</button>
 
 
-       <div class="modal fade" id="mymodal">
-      <div class="modal-dialog">
+    <div class="modal fade" id="mymodal">
+      <div class="modal-dialog" >
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -110,16 +112,16 @@
           </div>
           <div class="modal-body">
                   <div class="row">
-
+                            <div class = "col-lg-6">
                     					<div class="form-group">
-                                        <label>Title</label>
-                    							      <input type="text" class="form-control" name="title" id="title" placeholder="" disabled>
+                                <label>Title</label>
+                    						    <input type="text" class="form-control" name="title" id="title" placeholder="" disabled>
                     					</div>
 
 
             							  	<div class="form-group">
             							      <label>Summary</label>
-              							        <input type="text" class="form-control" name="summary" id="summary"  placeholder="" disabled>
+              							        <input type="text" class="form-control" name="summary" id="summary"  placeholder=""disabled>
             							    </div>
 
                               <div class="form-group">
@@ -127,7 +129,8 @@
                                     <textarea type="text" class="form-control" rows="20" id="description" disabled></textarea>
                               </div>
 
-
+                            </div>
+                            <div class = "col-lg-6">
 
                                   <div class="form-group">
                                     <label>Features</label>
@@ -149,6 +152,8 @@
                             							      <label>Comments</label>
                             							        <textarea type="text" class="form-control" rows="3"name="comments" id="comments"  placeholder=""></textarea>
                             							    </div>
+
+                          </div>
 
 											<!-- RADIO BUTTONS COMMENTED OUT
                                               <label for="radio">Regulation Status</label>
@@ -175,21 +180,28 @@
                                					</div>
 												
 												<div class="form-group">
-												  <label for="decision">Approve/Reject:</label>
-												  <select class="form-control" id="decision">
+												  <label for="decision">Approve/Reject:</label><br />
+												  <!-- <select class="form-control" id="decision">
 													<option>Accept</option>
-													<option>Reject</option>
-													
+													<option>Reject</option> -->
+                          <!-- RADIO BUTTONS FOR Approve/Reject -->
+													<label class = "radio-inline">
+                            <input type= "radio" name = "decision"> Accept
+                          </label>
+                          <label class = "radio-inline">
+                            <input type= "radio" name = "decision"> Reject
+                          </label>
 												  </select>
 												</div>
 												<!-- extra select element. Change names according to your convenience.-->
 												<div class="form-group">
-												  <label for="select1">Select:</label>
+												  
+                          <label for="select1">Select:</label>
 												  <select class="form-control" id="select1">
 													<option>1</option>
 													<option>2</option>
 													
-												  </select>
+												  </select> 
 												</div>			
 												<!--RADIO BUTTONS COMMENTED OUT
                                                 <label for="radio">Protoype Status</label>
