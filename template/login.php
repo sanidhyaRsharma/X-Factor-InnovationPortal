@@ -2,7 +2,7 @@
 <html lang="en" class="fullscreen-bg">
 
 <head>
-	<title>Login | Klorofil - Free Bootstrap Dashboard Template</title>
+	<title>Login </title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -20,8 +20,45 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 	<!-- <script src = "assets/scripts/login.js"></script> -->
-	
+
 </head>
+<?php
+include_once('functions.php');
+        $conn_type = "dbconnection.php";
+        include_once('classes.php');
+
+   if(isset($_POST['login']))
+   {
+
+        $username=validateFormData($_POST['username']);
+        $password=validateFormData($_POST['password']);
+        $user = new User($conn);
+        echo $username."      ".$password;
+
+        if($user->authorizeUser($username,$password))
+        {
+            session_start();
+            $_SESSION['user']=$user;
+            $_SESSION['username']=$user->getUserName();
+						$_SESSION['user_id'] = $user->getUserID();
+
+            if($user->getType()===1){
+              header('Location:admin-dashboard.php');
+            }else if ($user->getType()==2||$user->gettype()==3)
+            {
+              header('Location:user-dashboard.php');
+            }
+            else
+                header('Location:domain.php');
+        }
+       else
+        {
+            header('Location:login.php?auth=fail');
+        }
+
+   }
+
+?>
 
 <body>
 	<!-- WRAPPER -->
@@ -35,22 +72,17 @@
 								<div class="logo text-center"><img src="assets/img/dcb-bank.jpg" width= "70%"alt="DCB Bank"></div>
 								<p class="lead">Login to your account</p>
 							</div>
-							<form class="form-auth-small" action="index.php">
+							<form class="form-auth-small" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">Email</label>
-									<input type="email" class="form-control" name="user_name" id="email" value="" placeholder="Email">
+									<input type="email" class="form-control" name="username" id="email" value="" placeholder="Email">
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Password</label>
-									<input type="password" class="form-control" name="user_password" id="password" value="" placeholder="Password">
+									<input type="password" class="form-control" name="password" id="password" value="" placeholder="Password">
 								</div>
-								<div class="form-group clearfix">
-									<label class="fancy-checkbox element-left">
-										<input type="checkbox">
-										<span>Remember me</span>
-									</label>
-								</div>
-								<button type="submit" id = "submit_button" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+
+								<button type="submit" id = "submit_button" name="login" class="btn btn-primary btn-lg btn-block">LOGIN</button>
 								<div class="bottom">
 									<span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
 								</div>
