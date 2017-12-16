@@ -45,7 +45,7 @@
 			</div>
 			<div class="container-fluid">
 
-				<div id="navbar-menu">
+				<div id="navbar-menu">	
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
@@ -96,7 +96,7 @@
 					</div>
 					<!-- START PANEL-->
 					<div class="row col-lg-10">
-						<div class="panel" id="innovate">
+						<div class="panel" id="innovate" data-toggle="modal" data-target="#mymodal">
 								<div class="panel-heading">
 									<h3 class="panel-title"></h3>
 									<!-- <div class="right">
@@ -157,92 +157,75 @@
 		</div>
 
 
-		       <div class="modal fade" id="mymodal">
+		     <div class="modal fade" id="mymodal">
 		      <div class="modal-dialog">
+
 		        <div class="modal-content">
-		          <div class="modal-header">
-		            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		            <h4 class="modal-title">Enter your idea details below</h4>
-		          </div>
+	   				<form action="saveinnovation.php" method="post" enctype="multipart/form-data">
+
+		        	  <div class="modal-header">
+		           		 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            	<h4 class="modal-title">Enter your idea details below</h4>
+		          	</div>
+
 		          <div class="modal-body">
-		                  <div class="row">
-<form action="saveinnovation.php" method="post" enctype="multipart/form-data">
-		                    					<div class="form-group">
-		                                        <label>Title</label>
-		                    							      <input type="text" class="form-control" name="title" id="title" placeholder="">
-		                    					</div>
 
+		          			<div class="col-lg-5">
+		                    	<div class="form-group">
+		                            <label>Title</label>
+		                    		    <input type="text" class="form-control" name="title" id="title" placeholder="">
+		                    				</div>
+	            							  	<div class="form-group">
+	            							      <label>Summary</label>
+	              							        <input type="text" class="form-control" name="summary" id="summary"  placeholder="" >
+	            							    </div>
+	  	   		                            <div class="form-group">
+		                            <label>Description</label>
+		                            <textarea type="text" class="form-control" rows="20" name="comment" id="comment"></textarea>
+		                        </div>
+		                        
+                                <div class="form-group">
+                                    <label>Features</label>
+                                    <textarea type="text" class="form-control" rows="3" name="features" id="features"  placeholder="" ></textarea>
+                                </div>
+                                </div>
+		                      <div class="col-lg-5">
+                                
+                                <div class="form-group">
+            						<label>Bussiness Impact</label>
+                    				    <textarea type="text" class="form-control" rows="3" name="businessImpact" id="businessImpact" placeholder="" ></textarea>
+		                      	</div>
+		                      
+                                <div class="form-group">
+           							<label>Tangible Benefits</label>
+		                            <textarea type="text" class="form-control" rows="3"name="tangibleBenefits" id="tangibleBenefits"  placeholder="" ></textarea>
+		                        </div>
 
-		            							  	<div class="form-group">
-		            							      <label>Summary</label>
-		              							        <input type="text" class="form-control" name="summary" id="summary"  placeholder="" >
-		            							    </div>
+		                        <label for="radio">Regulation Status</label></br />
+		                        <div class="col-lg-4">
+		                            <input type="radio" name="regulated" value=1> Regulated
+		                        </div>
+                                <input type="radio" name="regulated" value=2> Nonregulated<br />
+                                <div class="form-group">
+								    <label>Upload Document</label>
+                                        Select image to upload: <input type="file" name="fileToUpload" id="fileToUpload">
+    						    </div>
 
-		                              <div class="form-group">
-		                                    <label>Description</label>
-		                                    <textarea type="text" class="form-control" rows="20" name="comment" id="comment"></textarea
-		                              </div>
-
-
-
-		                                  <div class="form-group">
-		                                    <label>Features</label>
-		                                      <textarea type="text" class="form-control" rows="3" name="features" id="features"  placeholder="" ></textarea>
-		                                  </div>
-
-
-		                                        <div class="form-group">
-		                      							      <label>Bussiness Impact</label>
-		                      							        <textarea type="text" class="form-control" rows="3" name="businessImpact" id="businessImpact" placeholder="" ></textarea>
-		                      							    </div>
-
-		                                           <div class="form-group">
-		                            							      <label>Tangible Benefits</label>
-		                            							        <textarea type="text" class="form-control" rows="3"name="tangibleBenefits" id="tangibleBenefits"  placeholder="" ></textarea>
-		                            							    </div>
-
-		                                              <label for="radio">Regulation Status</label>
-		                           	                                                <div class="col-lg-4">
-		                                                <input type="radio" name="regulated" value=1> Regulated
-		                                              </div>
-
-
-		                                                <input type="radio" name="regulated" value=2> Nonregulated<br>
-
-
-
-
-		                                              <div class="form-group">
-		                               							      <label>Upload Document</label>
-                                                      Select image to upload: <input type="file" name="fileToUpload" id="fileToUpload">
-
-		                               							    </div>
-
-		                                                <label for="radio">Protoype Status</label>
-
-		                                                <div class= "col-lg-4">
-		                                                <input type="radio" name="prototypeagree" value=1> Prototype Agree
-		                                              </div>
-
-		                                                <input type="radio" name="prototypeagree" value=2> Prototype Disagree
-
-
-
-
-
-
-		                </div>
-
-		          </div>
-		          <div class="modal-footer">
-		            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		            <button type="submit" class="btn btn-primary" name="save" id="save"/>Save changes</button>
-		          </div>
-		        </div>
+	                            <label for="radio">Protoype Status</label><br/>
+                                <div class= "col-lg-4">
+	                                <input type="radio" name="prototypeagree" value=1> Prototype Agree
+                                </div>
+	                            <input type="radio" name="prototypeagree" value=2> Prototype Disagree
+	                          </div>
+	               </div>
+		      <div class="modal-footer">
+		          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		          	<button type="submit" class="btn btn-primary" name="save" id="save"/>Save changes</button>
 		      </div>
-		    </div>
-</form>
-
+		         
+		        
+			</form>
+		</div>
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
@@ -253,11 +236,11 @@
 <script>
 
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-  $("#innovate").click(function(){
-    $('#mymodal').modal('show');
-  })
+//   $("#innovate").click(function(){
+//     $('#mymodal').modal('show');
+//   })
 
 
   $("#sasve").click(function(){

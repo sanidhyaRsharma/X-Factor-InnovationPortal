@@ -5901,6 +5901,7 @@ button.close {
   position: relative;
   width: auto;
   min-width: 1100px;
+  /*Added min-width option*/
   margin: 10px;
 }
 .modal-content {
